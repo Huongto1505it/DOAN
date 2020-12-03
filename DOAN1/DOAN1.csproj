@@ -43,11 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\interface\IKhachhangBLL.cs" />
     <Compile Include="BusinessLayer\interface\IMathangBLL.cs" />
+    <Compile Include="BusinessLayer\KhachhangBLL.cs" />
     <Compile Include="BusinessLayer\MathangBLL.cs" />
+    <Compile Include="DataAccessLayer\interface\IKhachhangDAL.cs" />
     <Compile Include="DataAccessLayer\interface\IMathangDAL.cs" />
+    <Compile Include="DataAccessLayer\KhachhangDAL.cs" />
     <Compile Include="DataAccessLayer\MathangDAL.cs" />
+    <Compile Include="Entities\Khachhang.cs" />
     <Compile Include="Entities\Mathang.cs" />
+    <Compile Include="Presenation\FmKhachhang.cs" />
     <Compile Include="Presenation\FmMathang.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
