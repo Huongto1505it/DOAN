@@ -1,0 +1,7 @@
+E:\C#2019\DOAN1\DOAN1\bin\Debug\DOAN1.exe.config
+E:\C#2019\DOAN1\DOAN1\bin\Debug\DOAN1.exe
+E:\C#2019\DOAN1\DOAN1\bin\Debug\DOAN1.pdb
+E:\C#2019\DOAN1\DOAN1\obj\Debug\DOAN1.csprojAssemblyReference.cache
+E:\C#2019\DOAN1\DOAN1\obj\Debug\DOAN1.csproj.CoreCompileInputs.cache
+E:\C#2019\DOAN1\DOAN1\obj\Debug\DOAN1.exe
+E:\C#2019\DOAN1\DOAN1\obj\Debug\DOAN1.pdb
