@@ -39,7 +39,7 @@ namespace DOAN1.Entities
             this.dongia = dongia;
         }
         public Mathang(Mathang t2)
-        {
+        {     
             this.mamh = t2.mamh;
             this.tenmh = t2.tenmh;
             this.theloai = t2.theloai;

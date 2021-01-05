@@ -1,0 +1,5 @@
+NCC1001#Nhà xuất bản Kim Đồng#Số 55 Quang Trung Hai Bà Trưng Hà Nội#02439434730 
+NCC1002#Nhà xuất bản trẻ#161B Lý Chính Thắng phường 7 quận 3 Thành phố Hồ Chí Minh#02839316289 
+NCC1003#Nhà xuất bản Hội Nhà văn#số 65 Nguyễn Du, Hà Nội#02438222135 
+NCC1004#Nhà xuất bản lao động#175 Giảng Võ, Đống Đa Hà Nội#02438515380 
+NCC1005#Nhà xuất bản giáo dục#81 Trần Hưng Đạo Hà Nội#02438220801 

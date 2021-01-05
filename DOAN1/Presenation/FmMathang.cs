@@ -9,16 +9,28 @@ namespace DOAN1.Presenation
 {
     public class FmMathang
     {
+        
         private IMathangBLL mhbll = new MathangBLL();
-        public void Nhap()
+        public  void Nhap()
         {
-            Console.Clear();
-            Console.WriteLine("Nhap thong tin mat hang");
-            Mathang mh = new Mathang();
-            Console.Write("Nhap ten mat hang:"); mh.Tenmh = Console.ReadLine();
-            Console.Write("Nhap the loai:"); mh.Theloai = Console.ReadLine();
-            Console.Write("Nhap don gia:"); mh.Dongia = int.Parse(Console.ReadLine());
-            mhbll.themmathang(mh);
+            do
+            {
+                
+                Console.WriteLine("Nhap thong tin mat hang");
+                Mathang mh = new Mathang();
+                Console.Write("Nhap ma mat hang:"); mh.Mamh = Console.ReadLine();
+                Console.Write("Nhap ten mat hang:"); mh.Tenmh = Console.ReadLine();
+                Console.Write("Nhap the loai:"); mh.Theloai = Console.ReadLine();
+                Console.Write("Nhap don gia:"); mh.Dongia = int.Parse(Console.ReadLine());
+                mhbll.themmathang(mh);
+                Console.WriteLine("Ban co muon nhap tiep c/k");
+                ConsoleKeyInfo k2 = Console.ReadKey();
+                if (k2.KeyChar == 'K' || k2.KeyChar == 'k')
+                {
+                    break;
+                }
+            } while (true);
+
         }
         public void Hien()
         {
@@ -26,7 +38,7 @@ namespace DOAN1.Presenation
             Console.WriteLine("THONG TIN MAT HANG");
             List<Mathang> list = mhbll.GetALLMH();
             foreach (var x in list)
-
+                
                 Console.WriteLine(x.Mamh + "\t" + x.Tenmh + "\t" + x.Theloai + "\t" + x.Dongia);
 
         }
@@ -53,18 +65,18 @@ namespace DOAN1.Presenation
                 if (dongia > 0) mh.Dongia = dongia;
                 mhbll.SuaMathang(mh);
             }
-            else Console.WriteLine("Mat hang nay k ton tai");
+            else  Console.WriteLine("Mat hang nay k ton tai"); 
         }
         public void Xoa()
         {
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Xoa thong tin mat hang");
             List<Mathang> list = mhbll.GetALLMH();
             Console.Write("Nhap ma mat hang can xoa:"); string mamathang = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; i++)
                 if (list[i].Mamh == mamathang) break;
-            if (i < list.Count)
+            if (i <= list.Count)
             {
                 mhbll.XoaMathang(mamathang);
 
@@ -73,7 +85,7 @@ namespace DOAN1.Presenation
         }
         public void TimKiem()
         {
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Tim tiem mat hang");
             List<Mathang> list = mhbll.GetALLMH();
            
@@ -98,32 +110,34 @@ namespace DOAN1.Presenation
             do
             {
                 Console.Clear();
-                Console.WriteLine("        THONG TIN MAT HANG     ");
-                Console.WriteLine("F1. Nhap mat hang ");
-                Console.WriteLine("F2. Sua mat hang ");
-                Console.WriteLine("F3. Xoa mat hang ");
-                Console.WriteLine("F4. Tim kiem mat hang ");
-                Console.WriteLine("F5. Hien thi mat hang ");
-                Console.WriteLine("F6. Thoat.... ");
+                Console.WriteLine("                                   ____________________________________________________________________");
+                Console.WriteLine("                                   |                   QUAN LY THONG TIN MAT HANG                 |");
+                Console.WriteLine("                                   |          F1.Nhập thông tin về mặt hàng                       |");
+                Console.WriteLine("                                   |          F2.Sửa mã mặt hàng                                  |");
+                Console.WriteLine("                                   |          F3.Xóa mặt hàng                                     |");
+                Console.WriteLine("                                   |          F4.Hiện thị danh sách mặt hàng                      |");
+                Console.WriteLine("                                   |          F5.Tìm kiếm thông tin mặt hàng                      |");
+                Console.WriteLine("                                   |          F6.Back                                             |");
+                Console.WriteLine("                                   |______________________________________________________________|");
                 ConsoleKeyInfo kt = Console.ReadKey();
                 switch (kt.Key)
                 {
                     case ConsoleKey.F1:
-                        Nhap(); Hien();
+                        Hien(); Nhap();
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
                     case ConsoleKey.F2:
-                        Sua(); Hien();
+                        Sua();Console.WriteLine("Da sua thanh cong"); Hien();
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
                     case ConsoleKey.F3:
-                        Xoa(); Hien();
-                        Console.WriteLine("Da xoa thanh cong!");
+                        Xoa();
+                        Console.WriteLine("ĐÃ XÓA THÀNH CÔNG!"); Hien();
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
-                    case ConsoleKey.F4:
+                    case ConsoleKey.F5:
                         Console.WriteLine("Mat hang can tim ");
                         TimKiem(); 
                         
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
-                    case ConsoleKey.F5:
+                    case ConsoleKey.F4:
                         Hien();
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
                     case ConsoleKey.F6:

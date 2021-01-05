@@ -8,12 +8,12 @@ using DOAN1.Entities;
 
 namespace DOAN1.DataAccessLayer
 {
-    public class MathangDAL : IMathangDAL
+    public class NhanvienDAL : INhanvienDAL
     {
-        private string tex = "Data/mathang.txt";
-        public List<Mathang> GetAllMathang()
+        private string tex = "Data/Nhanvien.txt";
+        public List<Nhanvien> GetAllNhanvien()
         {
-            List<Mathang> list = new List<Mathang>();
+            List<Nhanvien> list = new List<Nhanvien>();
             StreamReader sr = File.OpenText(tex);
             string s = sr.ReadLine();
             while (s != null)
@@ -21,7 +21,7 @@ namespace DOAN1.DataAccessLayer
                 if (s != "")
                 {
                     string[] a = s.Split('#');
-                    list.Add(new Mathang(a[0], a[1], a[2], int.Parse(a[3])));
+                    list.Add(new Nhanvien(a[0], a[1], a[2], a[3]));
 
                 }
                 s = sr.ReadLine();
@@ -29,19 +29,19 @@ namespace DOAN1.DataAccessLayer
             sr.Close();
             return list;
         }
-        public void ThemMathang(Mathang mh)
+        public void ThemNhanvien(Nhanvien nv)
         {
             
             StreamWriter sw = File.AppendText(tex);
             sw.WriteLine();
-            sw.Write(mh.Mamh + "#" + mh.Tenmh + "#" + mh.Theloai + "#" + mh.Dongia);
+            sw.Write(nv.Manv + "#" + nv.Tennv + "#" + nv.Diachi + "#" + nv.SDT);
             sw.Close();
         }
-        public void CapnhatMathang(List<Mathang> MH)
+        public void CapnhatNhanvien(List<Nhanvien> nv)
         {
             StreamWriter sw = File.CreateText(tex);
-            for (int i = 0; i < MH.Count; i++)
-                sw.WriteLine(MH[i].Mamh + "#" + MH[i].Tenmh + "#" + MH[i].Theloai + "#" + MH[i].Dongia);
+            for (int i = 0; i < nv.Count; i++)
+                sw.WriteLine(nv[i].Manv + "#" + nv[i].Tennv + "#" + nv[i].Diachi + "#" + nv[i].SDT);
             sw.Close();
         }
 

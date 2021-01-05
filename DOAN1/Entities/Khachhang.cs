@@ -13,7 +13,7 @@ namespace DOAN1.Entities
         public string Makh
         {
             get { return makh; }
-            set { if (!string.IsNullOrEmpty(value)) makh = value; }
+            set { if (!string.IsNullOrEmpty(value) ) makh = value; }
         }
         public string Tenkh
         {

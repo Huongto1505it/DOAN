@@ -12,13 +12,23 @@ namespace DOAN1.Presenation
         private IKhachhangBLL mhbll = new KhachhangBLL();
         public void Nhap()
         {
-            Console.Clear();
-            Console.WriteLine("Nhap thong tin khach hang");
-            Khachhang kh = new Khachhang();
-            Console.Write("Nhap ten khach hang:"); kh.Tenkh = Console.ReadLine();
-            Console.Write("Nhap dia chi:"); kh.Diachi = Console.ReadLine();
-            Console.Write("Nhap so dien thoai:"); kh.SDT = Console.ReadLine();
-            mhbll.themkhachhang(kh);
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Nhap thong tin khach hang");
+                Khachhang kh = new Khachhang();
+                Console.Write("Nhap ma khach hang:"); kh.Makh = Console.ReadLine();
+                Console.Write("Nhap ten khach hang:"); kh.Tenkh = Console.ReadLine();
+                Console.Write("Nhap dia chi:"); kh.Diachi = Console.ReadLine();
+                Console.Write("Nhap so dien thoai:"); kh.SDT = Console.ReadLine();
+                mhbll.themkhachhang(kh);
+                Console.WriteLine("Ban co muon nhap tiep c/k");
+                ConsoleKeyInfo k2 = Console.ReadKey();
+                if (k2.KeyChar == 'K' || k2.KeyChar == 'k')
+                {
+                    break;
+                }
+            } while (true);
         }
         public void Hien()
         {
@@ -32,7 +42,7 @@ namespace DOAN1.Presenation
         }
         public void Sua()
         {
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Sua thong tin khach hang");
             List<Khachhang> list = mhbll.GetALLMH();
             string maKhachhang;
@@ -53,11 +63,11 @@ namespace DOAN1.Presenation
                 if (sdt != "") kh.SDT = sdt;
                 mhbll.Suakhachhang(kh);
             }
-            else Console.WriteLine("Khach hang nay k ton tai");
+            //else Console.WriteLine("Khach hang nay k ton tai");
         }
         public void Xoa()
         {
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Xoa thong tin khach hang");
             List<Khachhang> list = mhbll.GetALLMH();
             Console.Write("Nhap ma khach hang can xoa:"); string maKhachhang = Console.ReadLine();
@@ -98,13 +108,15 @@ namespace DOAN1.Presenation
             do
             {
                 Console.Clear();
-                Console.WriteLine("        THONG TIN KHACH HANG     ");
-                Console.WriteLine("F1. Nhap khach hang ");
-                Console.WriteLine("F2. Sua khach hang ");
-                Console.WriteLine("F3. Xoa khach hang ");
-                Console.WriteLine("F4. Tim kiem khach hang ");
-                Console.WriteLine("F5. Hien thi khach hang ");
-                Console.WriteLine("F6. Thoat.... ");
+                Console.WriteLine("                                   ____________________________________________________________________");
+                Console.WriteLine("                                   |                   QUAN LY THONG TIN KHACH HANG                  |");
+                Console.WriteLine("                                   |          F1.Nhập thông tin khách hàng                           |");
+                Console.WriteLine("                                   |          F2.Sửa thông tin khách hàng                            |");
+                Console.WriteLine("                                   |          F3.Xóa khách hàng                                      |");
+                Console.WriteLine("                                   |          F4.Hiện thị thông tin khách hàng                       |");
+                Console.WriteLine("                                   |          F5.Tìm kiếm khách hàng                                 |");
+                Console.WriteLine("                                   |          F6.Back                                               |");
+                Console.WriteLine("                                   |________________________________________________________________|");
                 ConsoleKeyInfo kt = Console.ReadKey();
                 switch (kt.Key)
                 {
@@ -112,18 +124,19 @@ namespace DOAN1.Presenation
                         Nhap(); Hien();
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
                     case ConsoleKey.F2:
-                        Sua(); Hien();
+                        Hien(); Sua();
+                        Console.WriteLine("ĐÃ SỬA THÀNH CÔNG!");
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
                     case ConsoleKey.F3:
-                        Xoa(); Hien();
-                        Console.WriteLine("Da xoa thanh cong!");
+                        Hien(); Xoa();
+                        Console.WriteLine("ĐÃ XÓA THÀNH CÔNG!");
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
-                    case ConsoleKey.F4:
-                        Console.WriteLine("Mat hang can tim ");
+                    case ConsoleKey.F5:
+                        
                         TimKiem();
 
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
-                    case ConsoleKey.F5:
+                    case ConsoleKey.F4:
                         Hien();
                         Console.WriteLine("Nhan de tiep tuc ......"); Console.ReadKey(); break;
                     case ConsoleKey.F6:

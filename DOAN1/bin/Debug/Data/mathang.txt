@@ -1,5 +1,7 @@
-Sp201203020445#tohupong#tng#12300
+GK10001#Ngữ Văn#Sách giáo khoa#825000
+TT10001#Doremon#Truyện tranh#5000	
+CT10001#Tấm cám#Cổ tích#12000	
+VH10001#Truyện kiều#Văn học#45000
+KD10001#Dạy con làm giàu#Kinh doanh#89000
 
-Sp201203020640#hgdsd#gdg#5600
-Sp201203034017#To Thi Huong#122#56700
-Sp201203035522#To Thi Huong#dgdh#54464
+

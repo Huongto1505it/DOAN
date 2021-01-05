@@ -29,12 +29,12 @@ namespace DOAN1.DataAccessLayer
             sr.Close();
             return list;
         }
-        public void Themkhachhang(Khachhang mh)
+        public void Themkhachhang(Khachhang kh)
         {
-            string mamhang = "Sp" + DateTime.Now.ToString("yyMMddhhmmss");
+            
             StreamWriter sw = File.AppendText(tex);
             sw.WriteLine();
-            sw.Write(mamhang + "#" + mh.Tenkh + "#" + mh.Diachi + "#" + mh.SDT);
+            sw.Write(kh.Makh + "#" + kh.Tenkh + "#" + kh.Diachi + "#" + kh.SDT);
             sw.Close();
         }
         public void Capnhatkhachhang(List<Khachhang> MH)

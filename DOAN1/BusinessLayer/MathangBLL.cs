@@ -36,7 +36,7 @@ namespace DOAN1.BusinessLayer
                mhdal.CapnhatMathang(MH);
             }
             else
-                throw new Exception("Khong ton tai mat hang nay");
+                Console.WriteLine("Khong ton tai mat hang nay");
         }
         public void XoaMathang(string Mamh)
         {
@@ -92,8 +92,6 @@ namespace DOAN1.BusinessLayer
                     }
                 }
             }
-            
-            
             return MH;
         }
     }
